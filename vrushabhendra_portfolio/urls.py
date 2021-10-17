@@ -20,4 +20,9 @@ from vrushabhendra_portfolioapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage,name='homepage'),
+    path('projectmms/', project_mms_page, name='project_mms_page'),
+    path('projectinstac/', project_instaclone_page, name='project_instaclone_page'),
+    path('projectecom/', project_ecom_page, name='project_ecom_page'),
+    path('webdevconnect/', mywebconnect_page, name='mywebconnect_page'),
+    
 ]
