@@ -50,8 +50,9 @@
         <div class="bio animate__animated animate__shakeX">
           <h2 class="bio-title">About Me</h2>
           <p class="bio-text">
-            Myself Vrushabhendar Kumar K N , a devoloper and graduated from UVCE college. 
-            I am having 2 years expirience in mechanical industry. Currently looking for oppurtinity.
+            Myself <em> Vrushabhendar Kumar K N </em>, a devoloper from Bangalore.I am graduated from UVCE college 
+            which was founded by great Sir M Visvesvarayya. 
+            Currently looking job for developer role.
             
           </p>
         </div>
@@ -60,29 +61,64 @@
     <!-- More about me -->
     <section class="more-about">
       <h2>More About Me</h2>
-      <p>
-        Developed a Medicolitesource Hospital management web application.
-Created views and templates with Django view controller and template language and frontend stacks to create a user friendly website interface.
-Build all database models and are mapped with views.
-To retrieve the information queried the database queries from Python using Python-MYSQL connector and MYSQL DB package.
-      </p>
-      <p>
-        Heavy sheet metal fabrication and design of claddings for CNC turning centre, VMC and SPM, electrical cabinet, coolant tank, chip tank.
-By adding laser marking in development and optimized design that accelerated mass production line speed by 20%.
-      </p>
-      <p>
-        Design of conceptual industrial product considering aesthetic and ergonomics. Design of machine enclosure, soundproof enclosure, telescopic covers, bellows.
-Developed templates and fixtures to enhance production rate, quality and to avoid damages during transportation. Also Work with production, assembly unit to diagnose the problem of the equipment.
-Interaction with the customer to provide flexible product. Work with SCM to sources and integrate vendor components into subsystem assemblies as per design-functional requirements
-      </p>
-      <p>
-        intro-edu
-i scored 89.76% in SSLC at GJC peenya and at sheshadripuram secured 92% later completed my graduation at uvce
- started/founded by Great sir M visveswarayya which is 1st engineering college in karnataka. 
-intro-achieve
+    
+      <h4> EXPIRIENCE:</h4>
 
-I recieved scholarship from both state government and central government for straight four years during my academic graduation. My technical presentation at national conferance led to paper publication Internation Jornal of research in Aeronautical and mechanical
+      <dl>
+        <dt><h3>~Intern</h3>  &ensp;  Ihub Talent (5/2021 <strong> - </strong>Present)</dt>
+      <dd><p>
+        <li> Developing a Medicolitesource Hospital management web application.</li>
+        <li> Created <strong> views and templates </strong> with <em> Django </em> view controller and template language and frontend stacks to create 
+          a user friendly website interface. Build all database models and are mapped with views.</li>
+        <li> To retrieve the information queried the database queries from <strong> Python </strong> using Python-MYSQL connector and MYSQL DB package.</li>
+      </p></dd>
+
+      <dt><h4>~Designer</h4>  &ensp; Anagha Engineering (2/2020 <strong> - </strong>4/2021)</dt>
+      <dd><p>
+        <li> Heavy sheet metal fabrication and design of claddings for CNC turning centre, VMC and SPM,
+             electrical cabinet, coolant tank, chip tank.</li>
+        <li> By adding laser marking in development and optimized design that <strong> accelerated </strong>
+             mass production line speed by <strong>20%</strong> .</li>
+      </p></dd>
+
+      <dt><h4>~Designer</h4>  &ensp; Kladon Design Pvt. Ltd. (1/2019 <strong> - </strong>2/2020)</dt>
+      <dd><p>
+        <li> Design of conceptual industrial product considering aesthetic and ergonomics. 
+             Design of machine enclosure, soundproof enclosure, telescopic covers, bellows.</li>
+        <li> Developed templates and fixtures to <strong> enhance </strong> production rate, quality and to avoid damages during transportation.
+             Also Work with production, assembly unit to diagnose the problem of the equipment.</li>
+        <li> Interaction with the customer to provide flexible product. Work with SCM to sources and 
+             integrate vendor components into subsystem assemblies as per design-functional requirements</li>
+      </p></dd>
+    </dl>
+      <dl>
+        <dt><h4>EDUCATION:</h4></dt>
+      <p>
+            <dd><li> I scored <strong> 89.76% </strong> in SSLC at GJC peenya from Karnataka state secondary education board. </li></dd>
+            <dd><li> Finished my puc in sheshadripuram secured <strong> 92.33% </strong> Karnataka state PU board. </li></dd>
+            <dd><li> Later completed my graduation at <strong> UVCE </strong> started/founded by Great <em> Sir M Visveswarayya </em>
+                  which is first engineering college in karnataka.</li></dd>
       </p>
+      </dl>
+
+    <dl>
+    <h4>COARSE AND CERTIFICATIONS:</h4>
+    <p>
+      <h4> ♡ Python Full Stack Devlopment</h4>
+      <dt> &ensp; Quality Thought (5/2020 <strong> - </strong>8/2021)</dt>
+      <dd><li> Web development</li></dd>
+    </p>
+    </dl>
+
+    <dl>
+      <h4>ACHIEVEMENTS:</h4>
+      <p>
+      <li> I recieved scholarship from both state government and central government for straight four years during my academic graduation.</li>
+      <li> My technical presentation at national conferance led to paper publication Internation Jornal of research in Aeronautical and
+           mechanical</li>
+      <li> Secured 2nd rank in district level Science talent search examination.</li>
+      </p>
+    </dl>
     </section>
 
     <!-- Skills section -->
@@ -154,7 +190,7 @@ I recieved scholarship from both state government and central government for str
         </div>
       </div>
     </section>
-    
+
     <!-- Projects section -->
     <section class="projects" id="projects">
       <h2 class="projects-title">Some of my Recent Projects</h2>
@@ -206,12 +242,15 @@ I recieved scholarship from both state government and central government for str
       </div>
     </section>
 
+
+    
     <!-- Contact section -->
     <section class="contact" id="contact">
       <h2>Get In Touch With Me</h2>
       <div class="contact-form-container">
         <div class="contact-form">
-          <form action="https://formspree.io/f/xpzkeaby" method="POST">
+          <form name="Form1" action="#contact/" method="POST">
+            {% csrf_token %}
             <div class="form-control">
               <label for="name">Name</label>
               <input
@@ -251,12 +290,14 @@ I recieved scholarship from both state government and central government for str
               value="Submit"
               id="submit-btn"
               class="submit-btn"
+              name="button1"
+              onclick="return OnButton1();"
             />
           </form>
         </div>
       </div>
     </section>
-    <h3>{% error %}</h3>
+  
 
 
     <!-- Footer section -->
@@ -304,9 +345,34 @@ I recieved scholarship from both state government and central government for str
       /></a>
 
     
+    {% ifequal error 'no' %}
+    <script type="text/javascript">
+      alert('Submit is successful')
+      window.location('{% url 'homepage' %}')
+    </script>
+    {% endifequal %}
 
+    {% ifequal error 'yes' %}
+    <script type="text/javascript">
+      alert('Error occured {{ error_name }}')
+      window.location('{% url 'homepage' %}')
+    </script>
+    {% endifequal %}
     
 
+
+    <script language=javascript>
+      function OnButton1()
+          {
+              document.Form1.action = "https://formspree.io/f/xpzkeaby"    // First target
+              document.Form1.target = "iframe1";    // Open in a iframe
+              document.Form1.submit();        // Submit the page
+              document.Form1.action = "insertcontact/"    // Second target
+              document.Form1.target = "iframe2";    // Open in a iframe
+              document.Form1.submit();        // Submit the page
+              return true;
+          }
+  </script>
     <!-- Website scripts -->
     <script src="../static/js/scripts.js"></script>
 

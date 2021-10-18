@@ -1,6 +1,6 @@
 from django.core.checks import messages
 from django.shortcuts import redirect, render
-from models import Contact
+from .models import Contact
 
 # Create your views here.
 
@@ -36,7 +36,11 @@ def mywebconnect_page(request):
     return render(request, 'vrushabhendrakumarkn.html', {'work_name': project})
 
 def insert_contactdata(request):
+    """
+    This function to add contact to database. 
+    """
     error = ''
+    error_dict = None
     if request.method == 'POST':
         sender_name = request.POST['sender-name']
         sender_email = request.POST['sender-email']
@@ -46,13 +50,15 @@ def insert_contactdata(request):
             return redirect('homepage')
         else:
             try:
-                sender = Contact.objects.create(name=sender_name, email=sender_email, message=sender_message)
-                messages.success(request,'Submission is successful')
+                sender = Contact.objects.create(name=sender_name, email=sender_email, comment=sender_message)
+                messages.Info(request,'Submission is successful')
                 error = 'no'
+                return redirect('homepage')
 
             except Exception as e:
                 print(e)
+                error_name = type(e).__name__
                 error = 'yes'
+                error_dict = {'error': error, 'erron_name': error_name}
                 
-
-            return render(request, 'index.html',{'error':error,})
+                return render(request, 'index.html',error_dict)

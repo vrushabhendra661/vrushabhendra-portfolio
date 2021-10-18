@@ -24,5 +24,5 @@ urlpatterns = [
     path('projectinstac/', project_instaclone_page, name='project_instaclone_page'),
     path('projectecom/', project_ecom_page, name='project_ecom_page'),
     path('webdevconnect/', mywebconnect_page, name='mywebconnect_page'),
-    
+    path('insertcontact/',insert_contactdata, name='Insert_contactdata'),
 ]
