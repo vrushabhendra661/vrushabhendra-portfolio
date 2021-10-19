@@ -21,6 +21,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+
     <title>VRUSHABHENDRA~Web Developer</title>
   </head>
 
@@ -249,7 +250,7 @@
       <h2>Get In Touch With Me</h2>
       <div class="contact-form-container">
         <div class="contact-form">
-          <form name="Form1" action="#contact/" method="POST">
+          <form id="myForm" name="Form1" action="" method="POST">
             {% csrf_token %}
             <div class="form-control">
               <label for="name">Name</label>
@@ -297,7 +298,26 @@
         </div>
       </div>
     </section>
-  
+    
+    <!--Sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+    <div style="visibility:hidden">
+      <iframe NAME="iframe1" WIDTH="40" HEIGHT="40"></iframe>
+      <!--<iframe NAME="iframe2" WIDTH="40" HEIGHT="40"></iframe>-->
+      </div>
+      
+      {% if messages %}
+      <ul class="messages">
+        <script>
+          {% for message in messages %}
+            swal('{{message}}');
+          {% endfor %}
+          
+        </script>
+      <!--<li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>-->
+      </ul>
+      {% endif %}
 
 
     <!-- Footer section -->
@@ -343,7 +363,7 @@
       <a href="#" target="_blank"
         ><img src="../static/jifs/icons8-github.gif" alt="Github" class="socicon"
       /></a>
-
+      
     
     {% ifequal error 'no' %}
     <script type="text/javascript">
@@ -360,20 +380,22 @@
     {% endifequal %}
     
 
-
+    <!-- Website scripts -->
     <script language=javascript>
       function OnButton1()
           {
-              document.Form1.action = "https://formspree.io/f/xpzkeaby"    // First target
+              document.Form1.action = "https://formspree.io/f/xpzkeaby"    // First target 
               document.Form1.target = "iframe1";    // Open in a iframe
               document.Form1.submit();        // Submit the page
               document.Form1.action = "insertcontact/"    // Second target
               document.Form1.target = "iframe2";    // Open in a iframe
               document.Form1.submit();        // Submit the page
+              document.getElementById("myForm").reset();
               return true;
           }
-  </script>
-    <!-- Website scripts -->
+    </script>
+
+    
     <script src="../static/js/scripts.js"></script>
 
     <!-- Ion icons scripts -->

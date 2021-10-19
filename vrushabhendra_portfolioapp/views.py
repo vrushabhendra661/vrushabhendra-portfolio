@@ -1,4 +1,4 @@
-from django.core.checks import messages
+from django.contrib import messages
 from django.shortcuts import redirect, render
 from .models import Contact
 
@@ -46,12 +46,12 @@ def insert_contactdata(request):
         sender_email = request.POST['sender-email']
         sender_message = request.POST['message']
         if Contact.objects.filter(email=sender_email).exists():
-            messages.Warning(request,'ALERT: Email already exist. Try with other eamil !!!')
+            messages.warning(request,'ALERT: Email already exist. Try with other email !!!')
             return redirect('homepage')
         else:
             try:
                 sender = Contact.objects.create(name=sender_name, email=sender_email, comment=sender_message)
-                messages.Info(request,'Submission is successful')
+                messages.success(request,'Submission is successful')
                 error = 'no'
                 return redirect('homepage')
 
